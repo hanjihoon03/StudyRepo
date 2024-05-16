@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
+
 @Slf4j
 @RestController
 @RequiredArgsConstructor
@@ -15,12 +16,14 @@ public class MemberController {
 
     private final MemberRepository memberRepository;
 
+    
     @GetMapping("/members")
     public Members findAll() {
         Members members = memberRepository.findAll();
         log.info("Controller findAll {}", members);
         return members;
     }
+
 
     @GetMapping("/members/{memberId}")
     public Member findById(@PathVariable Long memberId) {
