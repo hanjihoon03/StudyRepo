@@ -66,6 +66,7 @@ public class PhysExamSearch {
         };
 
 
+
         System.out.println("키가 몇인 사람을 찾나요?: ");
         int height = sc.nextInt();
         int result = Arrays.binarySearch(x,new PhyscData("",height,0.0),HEIGHT_ORDER);
