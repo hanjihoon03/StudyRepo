@@ -1,20 +1,23 @@
 package sort;
 
-import javax.sql.DataSource;
-import java.util.Date;
 import java.util.Scanner;
 
-public class QuickSort {
+public class QuickSortV1 {
     //--- 배열 요소 a[idx1]와 a[idx2]의 값을 교환 ---//
     static void swap(int[] a, int idx1, int idx2) {
         int t = a[idx1];  a[idx1] = a[idx2];  a[idx2] = t;
     }
 
-    //--- 퀵 정렬 ---//
+    //--- 퀵 정렬(배열의 분할 과정을 표시)---//
     static void quickSort(int[] a, int left, int right) {
-        int pl = left;                   // 왼쪽 커서
-        int pr = right;                  // 오른쪽 커서
-        int x = a[(pl + pr) / 2];        // 피벗(가운데 요소)
+        int pl = left;                      // 왼쪽 커서
+        int pr = right;                     // 오른쪽 커서
+        int x = a[(pl + pr) / 2];           // 피벗(가운데 요소)
+
+        System.out.printf("a[%d]～a[%d] : {", left, right);
+        for (int i = left; i < right; i++)
+            System.out.printf("%d , ", a[i]);
+        System.out.printf("%d}\n", a[right]);
 
         do {
             while (a[pl] < x) pl++;
@@ -36,7 +39,7 @@ public class QuickSort {
         int[] x = new int[nx];
 
         for (int i = 0; i < nx; i++) {
-            System.out.print("x[" + i + "]: ");
+            System.out.print("x[" + i + "] : ");
             x[i] = stdIn.nextInt();
         }
 

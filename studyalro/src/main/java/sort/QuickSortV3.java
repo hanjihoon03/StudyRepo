@@ -1,20 +1,33 @@
 package sort;
 
-import javax.sql.DataSource;
-import java.util.Date;
+import stack.IntStack;
+
 import java.util.Scanner;
 
-public class QuickSort {
+public class QuickSortV3 {
     //--- 배열 요소 a[idx1]와 a[idx2]의 값을 교환 ---//
     static void swap(int[] a, int idx1, int idx2) {
         int t = a[idx1];  a[idx1] = a[idx2];  a[idx2] = t;
     }
 
+    //--- x[a], x[b], x[c]을 정렬(중앙값의 인덱스를 반환)---//
+    static int sort3elem(int[] x, int a, int b, int c) {
+        if (x[b] < x[a]) swap(x, b, a);
+        if (x[c] < x[b]) swap(x, c, b);
+        if (x[b] < x[a]) swap(x, b, a);
+        return b;
+    }
+
     //--- 퀵 정렬 ---//
     static void quickSort(int[] a, int left, int right) {
-        int pl = left;                   // 왼쪽 커서
-        int pr = right;                  // 오른쪽 커서
-        int x = a[(pl + pr) / 2];        // 피벗(가운데 요소)
+        int pl = left;                                  // 왼쪽 커서
+        int pr = right;                                 // 오른쪽 커서
+        int m = sort3elem(a, pl, (pl + pr) / 2, pr);    // 맨 앞・맨 끝・가운데를 정렬
+        int x = a[m];                                   // 피벗
+
+        swap(a, m, right - 1);            // 가운데 요소와 맨 끝에서 2번째 요소를 교환
+        pl++;                             // 왼쪽 커서를 1 오른쪽으로
+        pr -= 2;                          // 오른쪽 커서를 2 왼쪽으로
 
         do {
             while (a[pl] < x) pl++;
