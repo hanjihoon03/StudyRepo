@@ -1,0 +1,5 @@
+rootProject.name = 'kafka-test'
+include 'producer_application'
+include 'consumer_application01'
+include 'consumer_application02'
+

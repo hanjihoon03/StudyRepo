@@ -1,5 +1,7 @@
 //package com.example.batch.batchV;
 //
+//import com.example.batch.test.Member;
+//import com.example.batch.test.job.MemberRepository;
 //import jakarta.persistence.EntityManagerFactory;
 //import lombok.RequiredArgsConstructor;
 //import lombok.extern.slf4j.Slf4j;
@@ -11,7 +13,6 @@
 //import org.springframework.batch.core.repository.JobRepository;
 //import org.springframework.batch.core.step.builder.StepBuilder;
 //import org.springframework.batch.item.ItemProcessor;
-//import org.springframework.batch.item.data.builder.RepositoryItemReaderBuilder;
 //import org.springframework.batch.item.database.JpaItemWriter;
 //import org.springframework.batch.item.database.JpaPagingItemReader;
 //import org.springframework.beans.factory.annotation.Qualifier;
@@ -19,13 +20,10 @@
 //import org.springframework.context.ApplicationContext;
 //import org.springframework.context.annotation.Bean;
 //import org.springframework.context.annotation.Configuration;
-//import org.springframework.data.domain.Sort;
 //import org.springframework.transaction.PlatformTransactionManager;
 //
-//import java.time.LocalDate;
-//import java.time.format.DateTimeFormatter;
-//import java.util.Collections;
 //import java.util.Date;
+//
 //
 //@Configuration
 //@RequiredArgsConstructor
@@ -59,7 +57,7 @@
 //        return new StepBuilder("memberWorkStep", jobRepository)
 //                .<Member, MemberMonthlyWork>chunk(chunkSize,transactionManager)
 //                .reader(itemReader(entityManagerFactory))
-//                .processor(itemProcessor())
+//                .processor(itemProcessor1())
 //                .writer(itemWriter(entityManagerFactory))
 //                .build();
 //    }
@@ -80,21 +78,19 @@
 ////## 3번 ##
 //    @Bean
 //    @StepScope
-//    ItemProcessor<Member, MemberMonthlyWork> itemProcessor() {
-//        return Member -> {
-//            LocalDate now = LocalDate.now();
-//            LocalDate startDate = now.withDayOfMonth(1);
-//            LocalDate endDate = now.withDayOfMonth(now.lengthOfMonth());
+//    ItemProcessor<Member, MemberMonthlyWork> itemProcessor1() {
+//        return member -> {
+//            // 회원의 작업 시간을 계산하는 비즈니스 로직을 수행합니다.
+//            //businessService; ed-sd
+//            //vacationService; ed-sd
+//            //workOutsideService; ed-sd
 //
-//            Integer workHours = businessService.getWorkHour(member.getId(), startDate, endDate);
-//            Integer vacationHours = vacationService.getWorkHour(member.getId(), startDate, endDate);
-//            Integer outsideWorkHours = workOutsideService.getHour(member.getId(), startDate, endDate);
-//
+//            // MemberMonthlyWork 객체를 생성하여 값 설정 후 반환합니다.
 //            return MemberMonthlyWork.builder()
-//                    .memberId(member.getId())
-//                    .yearMonth(now.format(DateTimeFormatter.ofPattern("yyyyMM")))
-//                    .hour(workHours + vacationHours + outsideWorkHours)
-//                    .creationDate(new Date())
+//                    .yearMonth(yearMonth)
+//                    .memberId(member.getId()) //회원의 ID를 가져와 설정
+//                    .hour(totalWorkHours) // 계산된 총 작업 시간 설정
+//                    .creationDate(new Date()) // 생성일 설정
 //                    .build();
 //        };
 //    }

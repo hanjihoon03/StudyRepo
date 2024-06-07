@@ -1,0 +1,34 @@
+spring:
+  thymeleaf:
+  prefix: classpath:/templates/
+  suffix: .html
+  datasource:
+    #mysql 설정 부분
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/module?serverTimezone=Asia/Seoul
+    #    url: jdbc:mysql://testdb.czs22imqyijt.ap-northeast-2.rds.amazonaws.com:3306/testdb?serverTimezone=Asia/Seoul
+    username: root
+    password: raik1353
+
+  jpa:
+    #mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    #mysql
+    hibernate:
+      ddl-auto: create
+    #      ddl-auto: create
+    properties:
+      hibernate:
+        spring.jpa.open-in-view: false
+        # show_sql: true # 주석 처리하여 주석 처리된 상태로 둠
+        format_sql: true
+        default_batch_fetch_size: 30
+
+logging:
+  level:
+    root: INFO
+    org.springframework: INFO
+    spring.jpa.open-in-view: false
+    org.hibernate.SQL: info #debug
+    org.hibernate.type.descriptor.sql: info #trace

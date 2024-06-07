@@ -1,0 +1,6 @@
+rootProject.name = 'module-test'
+include 'module-test-mvc'
+include 'module-test-api'
+include 'module-test-domain'
+include 'module-test-common'
+
