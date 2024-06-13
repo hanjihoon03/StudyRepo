@@ -1,0 +1,12 @@
+rootProject.name = 'create-multi'
+include 'new-core'
+include 'new-core:domain'
+findProject(':new-core:domain')?.name = 'domain'
+include 'new-core:infra'
+findProject(':new-core:infra')?.name = 'infra'
+include 'new-core:overall'
+findProject(':new-core:overall')?.name = 'overall'
+include 'new-core:database'
+findProject(':new-core:database')?.name = 'database'
+include 'global-utils'
+

@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-aop'
+    // global-utils 모듈을 의존성으로 추가
+    implementation project(':global-utils')
+
+    // new-core:domain 모듈을 의존성으로 추가
+    implementation project(':new-core:domain')
+}
+
+test {
+    useJUnitPlatform()
+}

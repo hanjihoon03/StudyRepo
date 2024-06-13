@@ -1,0 +1,48 @@
+//plugin은 미리 구성해 놓은 task 들의 모음이며, 특정 빌드 과정에 필요한 기본 정보를 포함 한다.
+plugins {
+    id 'java'// 테스트, 번들링 기능과 함께 Java 컴파일을 추가해주며, 다른 JVM 언어 플러그인의 기반이 됨
+    id 'org.springframework.boot' version '3.2.3'// 실행가능한 jar 또는 war로 패키징하여 애플리케이션 실행이 가능하도록 하며, spring-boot-dependencies 기반의 의존성 관리를 사용함
+    id 'io.spring.dependency-management' version '1.1.4'// 자동으로 spring-boot-dependencies bom을 끌어와서 버전 관리를 해줌
+}
+
+
+// 현재의 root 프로젝트와 앞으로 추가될 서브 모듈에 대한 설정
+allprojects {
+    sourceCompatibility = '21'
+    targetCompatibility = '21'
+
+    // 라이브러리들을 받아올 원격 저장소들을 설정함
+    repositories {
+        mavenCentral()
+    }
+}
+
+// 루트 제외한 전체 서브 모듈에 해당되는 설정
+// settings.gradle에 include된 전체 프로젝트에 대한 공통 사항을 명시함
+// root 프로젝트까지 적용하고 싶다면 allprojects에서 사용해야 함
+subprojects {
+
+    // subprojects 블록 안에서는 plugins 블록을 사용할 수 없으므로 apply plugin을 사용해야 함
+    apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencies {
+
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+
+        testCompileOnly 'org.projectlombok:lombok'
+        testAnnotationProcessor 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+        compileOnly 'org.projectlombok:lombok'
+
+
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
