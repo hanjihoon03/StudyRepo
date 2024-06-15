@@ -1,11 +1,11 @@
 package com.interceptor;
 
+import com.con.SessionConst;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.servlet.HandlerInterceptor;
-import shoppingmall.project.additional.web.session.SessionConst;
 
 /**
  * 로그인 된 사용자인지 인증을 체크하는 인터셉터

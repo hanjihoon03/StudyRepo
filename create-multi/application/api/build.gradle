@@ -1,0 +1,32 @@
+// 실행가능한 jar로 생성하는 옵션, main이 없는 라이브러리에서는 false로 비활성화함
+// 스프링 부트 2.0 이상이라면 bootRepackage.enabled를 사용해야 함
+bootJar { enabled = true }
+
+// 외부에서 의존하기 위한 jar로 생성하는 옵션, main이 없는 라이브러리에서는 true로 비활성화함
+jar { enabled = false }
+
+dependencies {
+    implementation project(':new-core:domain')
+    implementation project(':global-utils')
+    implementation project(':new-core:overall')
+    implementation project(':new-core:interceptor')
+    implementation project(':new-core:database:database-api')
+    implementation project(':application:dto')
+
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.9.0'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    // actuator 추가
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    // prometheus 추가
+    implementation 'io.micrometer:micrometer-registry-prometheus'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+}
+
+test {
+    useJUnitPlatform()
+}

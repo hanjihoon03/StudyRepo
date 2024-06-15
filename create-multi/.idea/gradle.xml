@@ -8,11 +8,19 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/application" />
+            <option value="$PROJECT_DIR$/application/api" />
+            <option value="$PROJECT_DIR$/application/web" />
+            <option value="$PROJECT_DIR$/global-utils" />
             <option value="$PROJECT_DIR$/new-core" />
             <option value="$PROJECT_DIR$/new-core/database" />
+            <option value="$PROJECT_DIR$/new-core/database/database-api" />
+            <option value="$PROJECT_DIR$/new-core/database/database-mysql" />
             <option value="$PROJECT_DIR$/new-core/domain" />
             <option value="$PROJECT_DIR$/new-core/infra" />
+            <option value="$PROJECT_DIR$/new-core/interceptor" />
             <option value="$PROJECT_DIR$/new-core/overall" />
+            <option value="$PROJECT_DIR$/new-web" />
           </set>
         </option>
       </GradleProjectSettings>
