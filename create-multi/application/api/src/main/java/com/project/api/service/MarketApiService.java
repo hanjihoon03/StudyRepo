@@ -4,7 +4,9 @@ import com.base.User;
 import com.base.item.Item;
 import com.base.subdomain.Tier;
 import com.dto.ItemDto;
+import com.repository.ItemApiRepository;
 import com.repository.MarketApiRepository;
+import com.repository.UserApiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -22,10 +24,9 @@ import java.util.Optional;
 public class MarketApiService {
 
     private final MarketApiRepository marketApiRepository;
+    private final UserApiRepository userApiRepository;
+    private final ItemApiRepository itemApiRepository;
 
-    private final ItemRepository itemRepository;
-    private final UserService userService;
-    private final UserRepository userRepository;
 
     /**
      * 현재 사용자의 장바구니 정보를 반환하는 로직
@@ -34,17 +35,16 @@ public class MarketApiService {
      */
     @Transactional(readOnly = true)
     public List<ItemDto> purchaseItem(Long userId) {
-        Optional<User> user = userRepository.findById(userId);
+        Optional<User> user = userApiRepository.findById(userId);
         User user1 = user.orElseThrow();
         // 로그인 한 사용자의 아이디를 사용하여 구매된 상품 목록을 가져옵니다.
-        List<Item> itemsByUserId = itemRepository.findItemsByUserId(userId);
+        List<Item> itemsByUserId = itemApiRepository.findItemsByUserId(userId);
 
         //장바구니의 아이템 리스트의 아이디들 반환
         List<Long> purchaseCartItemId = new ArrayList<>();
         for (Item item : itemsByUserId) {
             purchaseCartItemId.add(item.getId());
         }
-        Tier userTier = userService.findUserTier(user1.getId());
 
         return marketApiRepository.findItemAndFile(purchaseCartItemId, userId);
     }

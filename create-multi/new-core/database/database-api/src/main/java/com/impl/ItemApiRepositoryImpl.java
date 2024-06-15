@@ -13,6 +13,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import static com.base.QMarket.market;
+import static com.base.QUser.user;
 import static com.base.item.QBook.book;
 import static com.base.item.QClothes.clothes;
 import static com.base.item.QElectronics.electronics;
@@ -304,6 +306,17 @@ public class ItemApiRepositoryImpl implements ItemApiRepositoryCustom {
                 .setFirstResult(offset)
                 .setMaxResults(limit)
                 .getResultList();
+    }
+    @Override
+    public List<Item> findItemsByUserId(Long userId) {
+
+        return queryFactory
+                .select(item)
+                .from(item)
+                .innerJoin(item.markets, market)
+                .innerJoin(market.user, user)
+                .where(user.id.eq(userId))
+                .fetch();
     }
 
 

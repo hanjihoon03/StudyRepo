@@ -9,6 +9,7 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 
 public interface ItemApiRepositoryCustom{
+    List<Item> findItemsByUserId(Long userId);
     List<Item> findPriceRange(ItemCond itemCond);
     List<Item> findDtypePriceRange(ItemCond itemCond);
     Book updateBook(Long id);
