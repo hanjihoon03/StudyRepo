@@ -1,6 +1,6 @@
 package com.project.service;
 
-import com.dto.PurchasePayDto;
+import com.project.dto.PurchasePayDto;
 import com.project.pay.KaKaoPayReadyV0;
 import com.project.pay.KakaoPayApprovalV0;
 import lombok.RequiredArgsConstructor;

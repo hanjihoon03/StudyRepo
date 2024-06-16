@@ -1,18 +1,8 @@
-plugins {
-    id 'java'
-}
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+bootJar { enabled = false }
+jar { enabled = true }
 
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-}
-
-test {
-    useJUnitPlatform()
 }

@@ -1,6 +1,6 @@
 package com.project.api.controller;
 
-import com.apidto.UserPurchaseDto;
+import com.project.apidto.UserPurchaseDto;
 import com.project.api.apiresponse.CustomErrorResponse;
 import com.project.api.service.PurchaseApiService;
 import io.swagger.v3.oas.annotations.Operation;

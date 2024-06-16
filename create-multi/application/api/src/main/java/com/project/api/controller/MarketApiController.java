@@ -1,7 +1,7 @@
 package com.project.api.controller;
 
 
-import com.dto.ItemDto;
+import com.project.dto.ItemDto;
 import com.project.api.apiresponse.CustomErrorResponse;
 import com.project.api.service.MarketApiService;
 import io.swagger.v3.oas.annotations.Operation;

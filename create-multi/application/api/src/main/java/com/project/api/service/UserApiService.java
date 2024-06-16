@@ -1,12 +1,12 @@
 package com.project.api.service;
 
-import com.apidto.UserDto;
-import com.apidto.UserLoginIdPwDto;
-import com.apidto.save.UserSaveDto;
-import com.base.User;
-import com.base.subdomain.Address;
-import com.base.subdomain.Tier;
-import com.repository.UserApiRepository;
+import com.project.apidto.UserDto;
+import com.project.apidto.UserLoginIdPwDto;
+import com.project.apidto.save.UserSaveDto;
+import com.project.User;
+import com.project.subdomain.Address;
+import com.project.subdomain.Tier;
+import com.project.repository.UserApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

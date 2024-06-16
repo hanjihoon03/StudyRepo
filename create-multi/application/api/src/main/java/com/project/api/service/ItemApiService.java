@@ -1,13 +1,14 @@
 package com.project.api.service;
 
 import com.apidto.*;
-import com.apidto.save.BookSaveApiDto;
-import com.apidto.save.ClothesSaveApiDto;
-import com.apidto.save.ElectronicsSaveApiDto;
-import com.apidto.save.FoodSaveApiDto;
-import com.apidto.update.*;
-import com.base.item.*;
-import com.repository.ItemApiRepository;
+import com.project.apidto.*;
+import com.project.apidto.save.BookSaveApiDto;
+import com.project.apidto.save.ClothesSaveApiDto;
+import com.project.apidto.save.ElectronicsSaveApiDto;
+import com.project.apidto.save.FoodSaveApiDto;
+import com.project.item.*;
+import com.project.apidto.update.*;
+import com.project.repository.ItemApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

@@ -1,7 +1,7 @@
 package com.project.api.service;
 
-import com.apidto.UserPurchaseDto;
-import com.repository.PurchaseApiRepository;
+import com.project.apidto.UserPurchaseDto;
+import com.project.repository.PurchaseApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,19 +1,9 @@
-plugins {
-    id 'java'
-}
 
-group = 'org.example'
-version = 'unspecified'
+bootJar { enabled = false }
+jar { enabled = true }
 
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     implementation project(':new-core:domain')
     implementation project(':global-utils')
-}
-
-test {
-    useJUnitPlatform()
 }

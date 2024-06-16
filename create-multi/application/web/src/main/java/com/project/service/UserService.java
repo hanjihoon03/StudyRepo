@@ -1,10 +1,10 @@
 package com.project.service;
 
-import com.base.User;
-import com.base.subdomain.Address;
-import com.base.subdomain.Tier;
-import com.form.UserForm;
-import com.repository.UserRepository;
+import com.project.User;
+import com.project.subdomain.Address;
+import com.project.subdomain.Tier;
+import com.project.form.UserForm;
+import com.project.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

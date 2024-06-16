@@ -1,8 +1,8 @@
 package com.project.controller;
 
 
-import com.annotation.Login;
-import com.base.User;
+import com.project.annotation.Login;
+import com.project.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

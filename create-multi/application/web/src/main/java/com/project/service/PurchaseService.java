@@ -1,10 +1,10 @@
 package com.project.service;
 
-import com.base.Delivery;
-import com.base.Purchase;
-import com.base.User;
-import com.dto.ItemDto;
-import com.repository.PurchaseRepository;
+import com.project.Delivery;
+import com.project.Purchase;
+import com.project.User;
+import com.project.dto.ItemDto;
+import com.project.repository.PurchaseRepository;
 import io.micrometer.core.annotation.Counted;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

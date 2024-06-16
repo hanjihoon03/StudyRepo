@@ -1,9 +1,9 @@
 package com.project.service;
 
-import com.base.Delivery;
-import com.base.User;
-import com.base.subdomain.DeliveryStatus;
-import com.repository.DeliveryRepository;
+import com.project.Delivery;
+import com.project.User;
+import com.project.subdomain.DeliveryStatus;
+import com.project.repository.DeliveryRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

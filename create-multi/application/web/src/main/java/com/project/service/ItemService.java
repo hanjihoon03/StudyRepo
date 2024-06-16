@@ -1,18 +1,18 @@
 package com.project.service;
 
 
-import com.base.UploadFile;
-import com.base.item.*;
-import com.dto.BookAndFileDto;
-import com.dto.ClothesAndFileDto;
-import com.dto.ElectronicsAndFileDto;
-import com.dto.FoodAndFileDto;
-import com.form.itemform.BookForm;
-import com.form.itemform.ClothesForm;
-import com.form.itemform.ElectronicsForm;
-import com.form.itemform.FoodForm;
-import com.repository.FileRepository;
-import com.repository.ItemRepository;
+import com.project.UploadFile;
+import com.project.item.*;
+import com.project.dto.BookAndFileDto;
+import com.project.dto.ClothesAndFileDto;
+import com.project.dto.ElectronicsAndFileDto;
+import com.project.dto.FoodAndFileDto;
+import com.project.form.itemform.BookForm;
+import com.project.form.itemform.ClothesForm;
+import com.project.form.itemform.ElectronicsForm;
+import com.project.form.itemform.FoodForm;
+import com.project.repository.FileRepository;
+import com.project.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;

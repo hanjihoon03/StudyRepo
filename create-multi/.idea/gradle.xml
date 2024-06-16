@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/application" />
             <option value="$PROJECT_DIR$/application/api" />
+            <option value="$PROJECT_DIR$/application/dto" />
             <option value="$PROJECT_DIR$/application/web" />
             <option value="$PROJECT_DIR$/global-utils" />
             <option value="$PROJECT_DIR$/new-core" />

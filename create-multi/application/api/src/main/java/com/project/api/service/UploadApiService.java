@@ -1,6 +1,6 @@
 package com.project.api.service;
 
-import com.repository.UploadApiRepository;
+import com.project.repository.UploadApiRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

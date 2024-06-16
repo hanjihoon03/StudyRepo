@@ -1,9 +1,9 @@
 package com.project.controller;
 
-import com.base.User;
-import com.con.SessionConst;
-import com.form.LoginForm;
-import com.form.UserForm;
+import com.project.User;
+import com.project.SessionConst;
+import com.project.form.LoginForm;
+import com.project.form.UserForm;
 import com.project.service.UserService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;

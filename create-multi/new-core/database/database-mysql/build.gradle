@@ -1,13 +1,4 @@
-plugins {
-    id 'java'
-}
 
-group = 'org.example'
-version = 'unspecified'
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
     implementation project(':new-core:domain')
@@ -18,8 +9,4 @@ dependencies {
     implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
     annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
     annotationProcessor 'jakarta.persistence:jakarta.persistence-api' // Ensure this is included
-}
-
-test {
-    useJUnitPlatform()
 }

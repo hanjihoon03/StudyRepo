@@ -1,12 +1,11 @@
 package com.project.api.service;
 
-import com.base.User;
-import com.base.item.Item;
-import com.base.subdomain.Tier;
-import com.dto.ItemDto;
-import com.repository.ItemApiRepository;
-import com.repository.MarketApiRepository;
-import com.repository.UserApiRepository;
+import com.project.User;
+import com.project.item.Item;
+import com.project.dto.ItemDto;
+import com.project.repository.ItemApiRepository;
+import com.project.repository.MarketApiRepository;
+import com.project.repository.UserApiRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
