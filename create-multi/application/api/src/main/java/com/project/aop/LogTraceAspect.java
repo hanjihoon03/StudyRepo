@@ -1,8 +1,8 @@
-package com.project.api.aop;
+package com.project.aop;
 
 
-import com.project.api.trace.ThreadLocalLogTrace;
-import com.project.api.trace.TraceStatus;
+import com.project.trace.ThreadLocalLogTrace;
+import com.project.trace.TraceStatus;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;

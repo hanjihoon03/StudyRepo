@@ -6,9 +6,9 @@ bootJar { enabled = true }
 jar { enabled = false }
 
 dependencies {
-    implementation project(':new-core:domain')
     implementation project(':global-utils')
-    implementation project(':new-core:interceptor')
+    implementation project(':new-core:domain')
+    implementation project(':new-core:infra')
     implementation project(':new-core:database:database-api')
     implementation project(':application:dto')
 

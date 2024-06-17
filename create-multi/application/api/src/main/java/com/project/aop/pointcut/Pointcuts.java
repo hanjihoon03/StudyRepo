@@ -1,4 +1,4 @@
-package com.project.api.aop.pointcut;
+package com.project.aop.pointcut;
 
 import org.aspectj.lang.annotation.Pointcut;
 

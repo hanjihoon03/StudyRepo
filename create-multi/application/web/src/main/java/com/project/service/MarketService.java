@@ -160,6 +160,7 @@ public class MarketService {
         return discount;
     }
 
+    @Transactional(readOnly = true)
     private int discountLogic(User user, int totalPrice) {
         int discountAmount = 0;
         Optional<User> optionalUser = userRepository.findById(user.getId());

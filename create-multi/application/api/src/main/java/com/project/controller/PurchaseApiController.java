@@ -1,8 +1,8 @@
-package com.project.api.controller;
+package com.project.controller;
 
 import com.project.apidto.UserPurchaseDto;
-import com.project.api.apiresponse.CustomErrorResponse;
-import com.project.api.service.PurchaseApiService;
+import com.project.apiresponse.CustomErrorResponse;
+import com.project.service.PurchaseApiService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

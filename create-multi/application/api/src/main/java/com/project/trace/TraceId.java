@@ -1,4 +1,4 @@
-package com.project.api.trace;
+package com.project.trace;
 
 import java.util.UUID;
 

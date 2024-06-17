@@ -1,10 +1,10 @@
-package com.project.api.controller;
+package com.project.controller;
 
 import com.project.apidto.UserDto;
 import com.project.apidto.UserLoginIdPwDto;
 import com.project.apidto.save.UserSaveDto;
-import com.project.api.apiresponse.CustomErrorResponse;
-import com.project.api.service.UserApiService;
+import com.project.apiresponse.CustomErrorResponse;
+import com.project.service.UserApiService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.media.Schema;

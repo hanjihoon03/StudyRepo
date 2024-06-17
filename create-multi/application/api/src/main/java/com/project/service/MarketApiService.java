@@ -1,4 +1,4 @@
-package com.project.api.service;
+package com.project.service;
 
 import com.project.User;
 import com.project.item.Item;

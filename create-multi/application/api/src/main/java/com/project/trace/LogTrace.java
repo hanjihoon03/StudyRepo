@@ -1,4 +1,4 @@
-package com.project.api.trace;
+package com.project.trace;
 
 public interface LogTrace {
     TraceStatus begin(String message);

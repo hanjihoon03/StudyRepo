@@ -1,4 +1,4 @@
-package com.project.api.trace;
+package com.project.trace;
 
 /**
  * 로그의 상태 정보를 보낸다

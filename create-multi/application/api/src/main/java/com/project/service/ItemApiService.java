@@ -1,6 +1,6 @@
-package com.project.api.service;
+package com.project.service;
 
-import com.apidto.*;
+
 import com.project.apidto.*;
 import com.project.apidto.save.BookSaveApiDto;
 import com.project.apidto.save.ClothesSaveApiDto;
