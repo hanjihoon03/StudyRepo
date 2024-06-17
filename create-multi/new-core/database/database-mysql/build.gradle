@@ -2,7 +2,6 @@
 
 dependencies {
     implementation project(':new-core:domain')
-    implementation project(':new-core:database')
     implementation project(':application:dto')
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.mysql:mysql-connector-j'

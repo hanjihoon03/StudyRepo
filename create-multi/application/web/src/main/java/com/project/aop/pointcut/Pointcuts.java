@@ -6,16 +6,16 @@ import org.aspectj.lang.annotation.Pointcut;
 public class Pointcuts {
 
 
-    @Pointcut("execution(* com.project.application..*(..))")
+    @Pointcut("execution(* com.project..*(..))")
     public void allPoint(){} // signature
 
-    @Pointcut("within(com.project.application..*Service*)")
+    @Pointcut("within(com.project..*Service*)")
     public void allService(){}
 
-    @Pointcut("within(com.project.application..*Controller*)")
+    @Pointcut("within(com.project..*Controller*)")
     public void allController(){}
 
-    @Pointcut("within(com.project.application..*Repository*)")
+    @Pointcut("within(com.project..*Repository*)")
     public void allRepository(){}
 
     @Pointcut("allPoint() && (allService() || allController() || allRepository())")
