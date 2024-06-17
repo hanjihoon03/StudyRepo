@@ -4,6 +4,7 @@ REST API 제공을 위한 별도의 서비스 모듈이다.
 WEB과 같은 데이터베이스를 공유하고 Swagger를 통해서 명세해 http 메서드에 맞는 자원을 통한 서비스를 제공하는 모듈
 
 # 구성
+```
 │   ├── api
 │   │   ├── build.gradle
 │   │   └── src
@@ -43,3 +44,4 @@ WEB과 같은 데이터베이스를 공유하고 Swagger를 통해서 명세해 
 │   │       └── test
 │   │           ├── java
 │   │           └── resources
+```

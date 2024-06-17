@@ -4,6 +4,7 @@ Java Class로 표현된 도메인 Class이다. 특정 모듈을 의존하지 않
 이외 별도의 의존을 가지지 않는 것이 규칙이다.
 
 # 구성
+```
 │   ├── domain
 │   │   ├── build.gradle
 │   │   └── src

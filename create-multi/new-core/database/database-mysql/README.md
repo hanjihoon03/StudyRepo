@@ -6,6 +6,7 @@ mysql을 사용하는 데이터베이스 모듈로 리포지토리 계층을 담
 ORM 데이터베이스인 Mysql을 사용하기 때문에 JPA를 사용하며 쿼리는 QueryDsl을 사용했으므로 의존을 갖는다.
 
 # 구성
+```
 │   │   ├── database-mysql
 │   │   │   ├── build.gradle
 │   │   │   └── src

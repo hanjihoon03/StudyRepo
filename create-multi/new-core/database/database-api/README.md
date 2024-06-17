@@ -4,6 +4,7 @@
 규칙은 mysql 모듈과 같은 규칙을 가진다.
 
 # 구성
+```
 │   │   ├── database-api
 │   │   │   ├── build.gradle
 │   │   │   └── src

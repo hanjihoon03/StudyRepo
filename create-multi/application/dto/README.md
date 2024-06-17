@@ -3,6 +3,7 @@ web과 api에서 공동으로 사용하는 도메인에 대해서 응답과 요�
 
 도메인과 연관이 있기 때문에 도메인 의존성을 가지고 있으며 form 데이터에 대해 검증이 필요하므로 validation과 api에서 swagger를 사용할 때 명세에 dto가 필요하기 때문에 swagger 의존성을 가졌다.
 # 구성
+```
 │   ├── dto
 │   │   ├── build.gradle
 │   │   └── src

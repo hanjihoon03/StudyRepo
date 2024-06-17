@@ -4,6 +4,7 @@
 상수 정의나 Type, Util등을 정의하고 모든 모듈에서 사용할 수 있는 것들을 정의했다.
 
 # 구성
+```
 ├── global-utils
 │   ├── build.gradle
 │   └── src
