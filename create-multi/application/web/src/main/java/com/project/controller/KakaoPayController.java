@@ -1,5 +1,6 @@
 package com.project.controller;
 
+
 import com.project.Delivery;
 import com.project.User;
 import com.project.item.Item;
@@ -11,12 +12,12 @@ import com.project.service.*;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
 
 import java.util.List;
 
@@ -31,6 +32,11 @@ public class KakaoPayController {
     private final DeliveryService deliveryService;
     private final ItemService itemService;
     private final PurchaseService purchaseService;
+    private final KafkaProducerService kafkaProducerService;
+    private final KafkaConsumerService kafkaConsumerService;
+
+    @Value("${spring.mail.username}")
+    private String username;
 
 
     /**
@@ -52,7 +58,7 @@ public class KakaoPayController {
      * @return
      */
     @GetMapping("/buyItem")
-    public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model,HttpSession session) {
+    public String kakaoPaySuccess(@RequestParam("pg_token") String pg_token, Model model,HttpSession session) throws Exception {
         log.info("kakaoPaySuccess pg_token : " + pg_token);
         User user = (User) session.getAttribute(SessionConst.LOGIN_USER);
 
@@ -60,7 +66,7 @@ public class KakaoPayController {
         int totalPrice = kakaoPayApprovalV0.getAmount().getTotal();
 
         userService.addAccumulatedAmount(user, totalPrice);
-        // 장바구니의 아이템 id find하고 수량만 set 열어서 사용
+
         List<MarketPayDtoV2> shoppingBasket = marketService.purchaseItem(user.getId());
 
         //구매한 배송 정보 저장
@@ -80,7 +86,7 @@ public class KakaoPayController {
 
         marketService.deleteMarketUser(user.getId());
 
-
+        kafkaProducerService.serialization_SendMessage(delivery,kakaoPayApprovalV0,totalPrice);
 
         model.addAttribute("info", kakaoPayApprovalV0);
         return "order/buyItem";
